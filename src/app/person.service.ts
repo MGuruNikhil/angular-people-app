@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class PersonService {
   // backend URL (adjust if backend runs on a different host/port)
-  base = 'http://localhost:5000/person';
+  base = 'https://node-mongo-people-api.vercel.app/person';
   constructor(private http: HttpClient) {}
 
   private handleError(err: HttpErrorResponse) {
