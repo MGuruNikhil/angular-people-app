@@ -1,0 +1,7 @@
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" class="error">Error: {{ error }}</div>
+<div *ngIf="!loading && person">
+  <p>Are you sure you want to delete {{ person.name }}?</p>
+  <button (click)="confirm()" [disabled]="deleting">{{ deleting ? 'Deleting...' : 'Yes, delete' }}</button>
+  <button (click)="router.navigate(['/people'])" [disabled]="deleting">Cancel</button>
+</div>

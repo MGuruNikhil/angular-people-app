@@ -1,0 +1,27 @@
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" class="error">Error: {{ error }}</div>
+<div *ngIf="!loading && !error && people.length === 0">No people yet. Use the button to add one.</div>
+<button (click)="add()" [disabled]="loading">Add Person</button>
+<table *ngIf="!loading && !error && people.length > 0">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Mobile</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of people">
+      <td>{{ p.name }}</td>
+      <td>{{ p.age }}</td>
+      <td>{{ p.gender }}</td>
+      <td>{{ p.mobile }}</td>
+      <td>
+  <button (click)="edit(p._id || p.id)" [disabled]="loading">Edit</button>
+  <button (click)="del(p._id || p.id)" [disabled]="loading">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
