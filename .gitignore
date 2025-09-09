@@ -30,3 +30,13 @@ Thumbs.db
 
 # Optional npm local env
 .env
+
+# Backend build (if using TypeScript in future)
+build/
+dist-server/
+
+# Test coverage
+/coverage
+
+# Optional: Angular environment secrets
+# /src/environments/environment*.ts
